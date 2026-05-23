@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="slides-format" content="viewport">
     <title>Harness Engineering & Steward</title>
+    <meta name="description" content="Internal engineering talk on harness engineering and Steward — an agent that handles MR chores (CI fixes, CodeRabbit replies) with bash, prompts, and Claude.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andrewli-ca.github.io/harness-engineering-presentation/">
+    <meta property="og:title" content="Harness Engineering & Steward">
+    <meta property="og:description" content="Internal engineering talk on harness engineering and Steward — an agent that handles MR chores (CI fixes, CodeRabbit replies) with bash, prompts, and Claude.">
+    <meta property="og:image" content="https://andrewli-ca.github.io/harness-engineering-presentation/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Title slide: Harness Engineering — Everything around an AI model that makes it actually useful. Andrew Li, May 2026.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harness Engineering & Steward">
+    <meta name="twitter:description" content="Internal engineering talk on harness engineering and Steward — an agent that handles MR chores (CI fixes, CodeRabbit replies) with bash, prompts, and Claude.">
+    <meta name="twitter:image" content="https://andrewli-ca.github.io/harness-engineering-presentation/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +35,8 @@
     </style>
     <style>
         :root { --color-bg: #0a0f0a; --color-text: #e8f5e8; --glow-color-rgb: 0,255,65; }
+        html.static .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+        html.static .nav-controls { display: none !important; }
         *, *::before, *::after { box-sizing: border-box; }
         html, body { background: var(--color-bg); margin: 0; }
         body { font-family: 'Inter', sans-serif; color: var(--color-text); overflow: hidden; height: 100vh; width: 100vw; }
@@ -894,6 +909,7 @@
 </div>
 
 <script>
+    if (new URLSearchParams(location.search).has('static')) document.documentElement.classList.add('static');
     let current = 1;
     const total = document.querySelectorAll('.slide').length;
     const dotsContainer = document.getElementById('dots');
